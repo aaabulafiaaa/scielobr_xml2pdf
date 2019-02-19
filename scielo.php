@@ -9,7 +9,9 @@ $arquivo = simplexml_load_string(file_get_contents("artigo_2.xml"));
 
 $i = 0; //totally fucked, won't work because authors info are interally referenced
 foreach($arquivo->front->{'article-meta'}->{'contrib-group'}->contrib as $contrib){
-echo "<b>{$contrib->name->surname} {$contrib->name->{'given-names'}}</b> ({$arquivo->front->{'article-meta'}->{'contrib-group'}->aff[$i]->institution}, {$arquivo->front->{'article-meta'}->{'contrib-group'}->aff[$i]->country})<br />";
+$institution =  (string) $arquivo->xpath("//aff[@id='aff{$contrib->xref[0]}']")[0]->institution[0];
+$country = (string) $arquivo->xpath("//aff[@id='aff{$contrib->xref[0]}']")[0]->country[0];
+echo "<b>{$contrib->name->surname} {$contrib->name->{'given-names'}}</b> ({$institution}, {$country})<br />";
 $i++;
 }
 
