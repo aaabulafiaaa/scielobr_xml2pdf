@@ -11,7 +11,10 @@ $i = 0; //totally fucked, won't work because authors info are interally referenc
 foreach($arquivo->front->{'article-meta'}->{'contrib-group'}->contrib as $contrib){
 $institution =  (string) $arquivo->xpath("//aff[@id='aff{$contrib->xref[0]}']")[0]->institution[0];
 $country = (string) $arquivo->xpath("//aff[@id='aff{$contrib->xref[0]}']")[0]->country[0];
-echo "<b>{$contrib->name->surname} {$contrib->name->{'given-names'}}</b> ({$institution}, {$country})<br />";
+if(count($arquivo->xpath("//corresp[@id='cor{$contrib->xref[0]}']")) > 0) {
+$email =  $arquivo->xpath("//corresp[@id='cor{$contrib->xref[0]}']")[0]->email;
+} else { $email = NULL; }
+echo "<b>{$contrib->name->surname} {$contrib->name->{'given-names'}}</b> ({$institution}, {$country}). {$email}<br />";
 $i++;
 }
 
