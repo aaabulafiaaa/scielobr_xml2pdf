@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$arquivo = simplexml_load_string(file_get_contents("artigo_2.xml"), null, LIBXML_NOCDATA);
+$arquivo = simplexml_load_string(file_get_contents("artigo.xml"), null, LIBXML_NOCDATA);
 // var_dump($arquivo->body->sec[0]->title);
 
  echo "<p style='text-align: right'>{$arquivo->front->{'journal-meta'}->{'journal-id'}} (ISSN: {$arquivo->front->{'journal-meta'}->issn})</p><h2 style='text-align: center'>{$arquivo->front->{'article-meta'}->{'title-group'}->{'article-title'}[0]}</h2> <h3 style='font-style: italic; text-align: center'>{$arquivo->front->{'article-meta'}->{'title-group'}->{'article-title'}[1]}</h3><br /><br />";
