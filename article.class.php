@@ -23,5 +23,6 @@ class article {
 		'id' =>,
 		'attrib' =>,
 	);
+}
 ?>
 
