@@ -28,9 +28,10 @@ class article {
 			"name1" => (string) $contrib->name->{'given-names'},
 			"name2" => (string) $contrib->name->surname
 		);
-		if(count($this->xml->xpath("//corresp[@id='cor{$contrib->xref[0]}']")) > 0)
+		if(count($this->xml->xpath("//corresp[@id='c{$contrib->xref[0]}']")) > 0)
 		{
-			$this->authors[$i]["email"] = (string) $this->xml->xpath("//corresp[@id='cor{$contrib->xref[0]}']")[0]->email;
+			$this->authors[$i]["email"] = (string) $this->xml->xpath("//corresp[@id='c{$contrib->xref[0]}']")[0]->email;
+			$this->authors[$i]["correspondence"] = (string) $this->xml->xpath("//corresp[@id='c{$contrib->xref[0]}']")[0];
 		} else
 		{
 			$this->authors[$i]["email"] = ""; 
