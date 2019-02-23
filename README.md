@@ -8,7 +8,6 @@ Unfortunately I'll have to use PHP's "OO" to implement this sice it'd be easier 
 
 I'm thinking about using JSON for the internal use of data, but i'm still not sure. The Scielo XML standard is full of redundancies in a very unorganized way (like how come institutional affiliation and email addresses are outside of the contribuitors' fields? These data are bound to each other but literally scrabbled in the xml files, so lots of workarounds are needed to unify them all. 
 
-** the code is full of comments and tests, just ignore them **
-
 # Technical rant/other gibberish
 You can see there are two different XML files: one is a XML i got from a random journal indexed by Scielo, and the other (artigo2.xml) is taken directly from Scielo publish schema's examples. It's not hard to see both files are different and still indexable either way :p standards such as these suck.
+Now you don't have to crawl the whole file if your need just some specs (this can be useful for indexers or similar use), just instantiate the class with FALSE as 2nd param and you'd have to get the data through the methods.

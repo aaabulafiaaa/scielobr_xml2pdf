@@ -12,12 +12,21 @@ class article extends FPDF {
 	public $article = array();	
 	private $xml;
 
-	public function __construct($xml) {
+	public function __construct($xml, $loadAll = TRUE) {
 		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
-		// journal metadata
+		if($loadAll){
+			$this->JournalData();
+			$this->AuthorData();
+			$this->IssueData();
+			$this->ArticleData();
+		}	
+	}
+
+	public function JournalData(){
 		$this->journal = array(
 			"id" => (string) $this->xml->front->{'journal-meta'}->{'journal-id'},
-			"name" => array((string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'journal-title'},(string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'abbrev-journal-title'}),
+			"name" => array((string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'journal-title'},
+					(string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'abbrev-journal-title'}),
 			"issn" => array(
 				"print" => (int) (str_replace("-", "", $this->xml->front->{'journal-meta'}->issn[0])),
 				"online" => (int) (str_replace("-", "", $this->xml->front->{'journal-meta'}->issn[1]))),
@@ -27,7 +36,9 @@ class article extends FPDF {
 				(string) $this->xml->front->{'article-meta'}->permissions->license[0]->{'license-p'}[0]
 				)
 		);
-		// authors metadata
+	}
+
+	public function AuthorData(){
 		$i = 0;
 		foreach($this->xml->front->{'article-meta'}->{'contrib-group'}->contrib as $contrib){
 			$this->authors[$i] = array(
@@ -47,14 +58,19 @@ class article extends FPDF {
 		$i++;
 		}
 		$this->authors["count"] = $i;
-		// issue metadata
+	}
+
+	public function IssueData(){
 		$this->issue = array(
 			"pub_season" => (string) $this->xml->front->{'article-meta'}->{'pub-date'}[0]->season,
 			"pub_year" => (int) $this->xml->front->{'article-meta'}->{'pub-date'}[0]->year,
 			"volume" => (int) $this->xml->front->{'article-meta'}->volume,
 			"issue" => (int) $this->xml->front->{'article-meta'}->issue
 		);
-		// article metadata
+	}
+
+
+	public function ArticleData(){
 		$this->article["metadata"] = array(
 			"doi" => (string) $this->xml->front->{'article-meta'}->{'article-id'}[0],
 			"title" =>  (string) $this->xml->front->{'article-meta'}->{'title-group'}->{'article-title'},
@@ -79,11 +95,7 @@ class article extends FPDF {
 			$bi +=1;
 			}
 		}
-	
 	}
-
-	public function loadAuthors(){}
-
 }
 
 $artigo = new article(file_get_contents("artigo2.xml"));
