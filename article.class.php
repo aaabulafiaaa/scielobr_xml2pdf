@@ -16,7 +16,9 @@ class article {
 		$this->journal = array(
 			"id" => (string) $this->xml->front->{'journal-meta'}->{'journal-id'},
 			"name" => array((string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'journal-title'},(string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'abbrev-journal-title'}),
-			"issn" => (string) $this->xml->front->{'journal-meta'}->issn,
+			"issn" => array(
+				"print" => (int) (str_replace("-", "", $this->xml->front->{'journal-meta'}->issn[0])),
+				"online" => (int) (str_replace("-", "", $this->xml->front->{'journal-meta'}->issn[1]))),
 			"publisher" => (string) $this->xml->front->{'journal-meta'}->publisher->{'publisher-name'},
 			"license" => array(
 				(string) $this->xml->front->{'article-meta'}->permissions->license->attributes()->{'license-type'},
@@ -62,7 +64,18 @@ class article {
 		);
 
 		if(count($this->xml->front->{'article-meta'}->abstract) >= 0) {
-		$this->article["abstract"] = $this->xml->front->{'article-meta'}->abstract[0];
+		// $this->article["abstract"][] = $this->xml->front->{'article-meta'}->abstract[0];
+		$bi=0;
+			foreach($this->xml->front->{'article-meta'}->abstract as $abstract)
+			{
+			$this->article["abstract"][$bi]["title"] = (string) $abstract->title;
+				foreach($abstract->sec as $sec)
+				{
+				$this->article["abstract"][] = array("title" => (string) $sec->title,
+				"text" => (string) $sec->p);
+				}
+			$bi +=1;
+			}
 		}
 	
 	}
@@ -74,7 +87,7 @@ $artigo = new article(file_get_contents("artigo2.xml"));
 echo "<pre>";
 var_dump($artigo);
 echo "<h2> ARTICLE META</h2>";
-var_dump($artigo->xml->front->{'article-meta'}->permissions->license->attributes()->{'license-type'});
+var_dump( $artigo->xml->front->{'journal-meta'});
 echo "</pre>";
 ?>
 
