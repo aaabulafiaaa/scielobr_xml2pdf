@@ -1,5 +1,4 @@
-# scielobr_xmltopdf
-ScieloBR XML to PDF
+# Project overview
 
 This can be seen on https://test.patafisica.cc/scielo/article.class.php.
 
@@ -9,5 +8,5 @@ Unfortunately I'll have to use PHP's "OO" to implement this sice it'd be easier 
 
 I'm thinking about using JSON for the internal use of data, but i'm still not sure.
 
-# Technical details
+# Technical rant/other gibberish
 You can see there are two different XML files: one is a XML i got from a random journal indexed by Scielo, and the other (artigo2.xml) is taken directly from Scielo publish schema's examples. It's not hard to see both files are different and still indexable either way :p standards such as these suck.
