@@ -1,14 +1,16 @@
 <?php
+require('libs/fpdf.php');
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-class article {
+class article extends FPDF {
 	public $journal = array();	
 	public $issue = array();
 	public $authors = array();
 	public $article = array();	
-	public $xml;
+	private $xml;
 
 	public function __construct($xml) {
 		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
@@ -80,12 +82,13 @@ class article {
 	
 	}
 
+	public function loadAuthors(){}
 
 }
 
 $artigo = new article(file_get_contents("artigo2.xml"));
 echo "<pre>";
-var_dump($artigo);
+var_dump(json_decode(json_encode($artigo)));
 echo "<h2> ARTICLE META</h2>";
 var_dump( $artigo->xml->front->{'journal-meta'});
 echo "</pre>";
