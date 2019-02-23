@@ -7,8 +7,8 @@ class article {
 	public $journal = array();	
 	public $issue = array();
 	public $authors = array();
-	
-	private $xml;
+	public $article = array();	
+	protected $xml;
 
 	public function __construct($xml) {
 		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
@@ -46,15 +46,16 @@ class article {
 			"issue" => (int) $this->xml->front->{'article-meta'}->issue
 		);
 		// article metadata
-		$this->artile = array(
-			"doi" => (string) $this->xml->front->{'article-meta'}->{'article-id'}[0]
+		$this->article["metadata"] = array(
+			"doi" => (string) $this->xml->front->{'article-meta'}->{'article-id'}[0],
+			"title" =>  (string) $this->xml->front->{'article-meta'}->{'title-group'}->{'article-title'}
 		);
 	}
 
 
 }
 
-$artigo = new article(file_get_contents("artigo.xml"));
+$artigo = json_decode(json_encode(new article(file_get_contents("artigo2.xml"))));
 echo "<pre>";
 var_dump($artigo);
 echo "</pre>";
