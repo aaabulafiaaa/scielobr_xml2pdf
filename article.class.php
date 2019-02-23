@@ -8,7 +8,7 @@ class article {
 	public $issue = array();
 	public $authors = array();
 	public $article = array();	
-	protected $xml;
+	private $xml;
 
 	public function __construct($xml) {
 		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
