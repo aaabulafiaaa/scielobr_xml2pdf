@@ -18,7 +18,10 @@ class article {
 			"name" => array((string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'journal-title'},(string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'abbrev-journal-title'}),
 			"issn" => (string) $this->xml->front->{'journal-meta'}->issn,
 			"publisher" => (string) $this->xml->front->{'journal-meta'}->publisher->{'publisher-name'},
-			"license" => (string) $this->xml->front->{'article-meta'}->permissions->license[0]->{'license-p'}[0]
+			"license" => array(
+				(string) $this->xml->front->{'article-meta'}->permissions->license->attributes()->{'license-type'},
+				(string) $this->xml->front->{'article-meta'}->permissions->license[0]->{'license-p'}[0]
+				)
 		);
 		// authors metadata
 		$i = 0;
@@ -71,7 +74,7 @@ $artigo = new article(file_get_contents("artigo2.xml"));
 echo "<pre>";
 var_dump($artigo);
 echo "<h2> ARTICLE META</h2>";
-var_dump($artigo->xml->front->{'article-meta'}->{'kwd-group'}->kwd);
+var_dump($artigo->xml->front->{'article-meta'}->permissions->license->attributes()->{'license-type'});
 echo "</pre>";
 ?>
 
