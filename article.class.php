@@ -8,7 +8,7 @@ class article {
 	public $issue = array();
 	public $authors = array();
 	public $article = array();	
-	private $xml;
+	public $xml;
 
 	public function __construct($xml) {
 		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
@@ -17,7 +17,8 @@ class article {
 			"id" => (string) $this->xml->front->{'journal-meta'}->{'journal-id'},
 			"name" => array((string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'journal-title'},(string) $this->xml->front->{'journal-meta'}->{'journal-title-group'}->{'abbrev-journal-title'}),
 			"issn" => (string) $this->xml->front->{'journal-meta'}->issn,
-			"publisher" => (string) $this->xml->front->{'journal-meta'}->publisher->{'publisher-name'}
+			"publisher" => (string) $this->xml->front->{'journal-meta'}->publisher->{'publisher-name'},
+			"license" => (string) $this->xml->front->{'article-meta'}->permissions->license[0]->{'license-p'}[0]
 		);
 		// authors metadata
 		$i = 0;
@@ -49,16 +50,28 @@ class article {
 		// article metadata
 		$this->article["metadata"] = array(
 			"doi" => (string) $this->xml->front->{'article-meta'}->{'article-id'}[0],
-			"title" =>  (string) $this->xml->front->{'article-meta'}->{'title-group'}->{'article-title'}
+			"title" =>  (string) $this->xml->front->{'article-meta'}->{'title-group'}->{'article-title'},
+			"history" => array(
+					"received" => (int) mktime(0, 0, 0, (int) $this->xml->front->{'article-meta'}->history->date[0]->month, (int) $this->xml->front->{'article-meta'}->history->date[0]->day, (int) $this->xml->front->{'article-meta'}->history->date[0]->year),
+					"accepted" => (int) mktime(0, 0, 0, (int) $this->xml->front->{'article-meta'}->history->date[1]->month, (int) $this->xml->front->{'article-meta'}->history->date[1]->day, (int) $this->xml->front->{'article-meta'}->history->date[1]->year)
+				),
+			"keywords" => (array) $this->xml->front->{'article-meta'}->{'kwd-group'}->kwd
 		);
+
+		if(count($this->xml->front->{'article-meta'}->abstract) >= 0) {
+		$this->article["abstract"] = $this->xml->front->{'article-meta'}->abstract[0];
+		}
+	
 	}
 
 
 }
 
-$artigo = json_decode(json_encode(new article(file_get_contents("artigo2.xml"))));
+$artigo = new article(file_get_contents("artigo2.xml"));
 echo "<pre>";
 var_dump($artigo);
+echo "<h2> ARTICLE META</h2>";
+var_dump($artigo->xml->front->{'article-meta'}->{'kwd-group'}->kwd);
 echo "</pre>";
 ?>
 
