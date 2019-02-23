@@ -8,3 +8,6 @@ A PHP implementation of Scielo's brazilian XML standard (http://docs.scielo.org/
 Unfortunately I'll have to use PHP's "OO" to implement this sice it'd be easier to implement fpdf to it and organize; i'm simply translating Scielo schema into PHP to be able to handle those files; an issue i found is that many indexed journals do not follow scielo's standards, so that's a deal breaker, but i'll do it following the documentation and see where it leads me; organizing the article in a class will give me the ability to change how the file is parsed (ie different tags) so i wouldn't be the only person capable of using it without reading the whole specs.
 
 I'm thinking about using JSON for the internal use of data, but i'm still not sure.
+
+# Technical details
+You can see there are two different XML files: one is a XML i got from a random journal indexed by Scielo, and the other (artigo2.xml) is taken directly from Scielo publish schema's examples. It's not hard to see both files are different and still indexable either way :p standards such as these suck.
