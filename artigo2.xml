@@ -156,34 +156,144 @@
      </sec>
 </body>
 <back>
-     <ref-list>
-          <title>References</title>
-          <ref id="B1">
-               <mixed-citation>Blumentritt, T. P. (2003). Foreign subsidiaries' government affairs activities. Business &amp; Society, 42(2), 202-233. doi: 10.1177/0007650303042002003</mixed-citation>
-               <element-citation publication-type="journal">
-                    <person-group person-group-type="author">
-                         <name>
-                             <surname>Blumentritt</surname>
-                             <given-names>T. P.</given-names>
-                         </name>
-                    </person-group>
-                    <year>2003</year>
-                    <article-title>Foreign subsidiaries' government affairs activities</article-title>
-                    <source>Business &amp; Society</source>
-                    <volume>42</volume>
-                    <issue>2</issue>
-                    <fpage>202</fpage>
-                    <lpage>233</lpage>
-                    <pub-id pub-id-type="doi">10.1177/0007650303042002003</pub-id>
-               </element-citation>
-          </ref>
-        ...
-     </ref-list>
-     <app-group>
+       <app-group>
           <app id="app1">
              <label>Appendix 1</label>
              <p>Para mais informações <ext-link ext-link-type="uri" xlink:href="http://www.scielo.org">clique aqui</ext-link> para verificar o pdf.</p>
           </app>
      </app-group>
+<ref-list>
+	<title>Referências bibliográficas</title>
+    <ref id="R01">
+        <label>1</label>
+        <mixed-citation>ARRETCHE, M. Federalism and territorial equality: a contradiction in terms? Dados, Rio de Janeiro, v. 5, n. 02, 2010 . Disponível em: &lt;http://socialsciences.scielo.org.</mixed-citation>
+        <element-citation publication-type="journal">
+            <person-group person-group-type="author">
+                <name>
+                    <surname>ARRETCHE</surname>
+                    <given-names>M</given-names>
+                </name>
+            </person-group>
+            <article-title>Federalism and territorial equality: a contradiction in terms?</article-title>
+            <source>Dados</source>
+            <publisher-loc>Rio de Janeiro</publisher-loc>
+            <volume>5</volume>
+            <issue>02</issue>
+            <year>2010</year>
+            <ext-link ext-link-type="uri" xlink:href="http://socialsciences.scielo.org">http://socialsciences.scielo.org</ext-link>
+        </element-citation>
+    </ref>
+   <ref id="R02">
+        <label>2</label>
+        <mixed-citation>Calkins BM, Mendeloff AI. The epidemiology of idiopathic inflammatory bowel disease. In: Kirsner JB, Shorter RG, eds. Inflammatory bowel disease, 4th ed. Baltimore: Williams &amp; Wilkins. 1995:31-68.</mixed-citation>
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+                <surname>Calkins</surname>
+                <given-names>BM</given-names>
+            </name>
+            <name>
+                <surname>Mendeloff</surname>
+                <given-names>AI</given-names>
+            </name>
+          </person-group>
+            <chapter-title>The epidemiology of idiopathic inflammatory bowel
+            disease.</chapter-title>
+            <person-group person-group-type="editor">
+                <name>
+                    <surname>Kirsner</surname>
+                    <given-names>JB</given-names>
+                </name>
+                <name>
+                    <surname>Shorter</surname>
+                    <given-names>RG</given-names>
+                </name>
+            </person-group>
+            <source>Inflammatory bowel disease</source>
+            <edition>4th ed</edition>
+            <publisher-loc>Baltimore</publisher-loc>
+            <publisher-name>Williams &amp; Wilkins</publisher-name>
+            <year>1995</year>
+            <fpage>31</fpage>
+            <lpage>68</lpage>
+        </element-citation>
+    </ref>
+    <ref id="R03">
+        <label>3</label>
+        <mixed-citation>LÉVY, Pierre. As tecnologias da inteligência: o futuro do pensamento na era da informática. Edição especial. Rio de Janeiro: Editora 34. 2001. 208 p.</mixed-citation>
+    <element-citation publication-type="book">
+        <person-group person-group-type="author">
+            <name>
+                <surname>LÉVY</surname>
+                <given-names>Pierre</given-names>
+            </name>
+        </person-group>
+        <source>As tecnologias da inteligência: o futuro do pensamento na era da informática</source>
+        <edition>edição especial</edition>
+        <publisher-loc>Rio de Janeiro</publisher-loc>
+        <publisher-name>Editora 34</publisher-name>
+        <year>2001</year>
+        <size units="pages">208</size>
+    </element-citation>
+    </ref>
+<ref id="R04">
+    <label>4</label>
+    <mixed-citation>COB - Comitê Olímpico Brasileiro. Desafio para o corpo. Disponível em: http://www.cob.org.br/esportes/esporte.asp?id=39. (Acesso em 10 abr 2010)</mixed-citation>
+    <element-citation publication-type="webpage">
+        <person-group person-group-type="author">
+            <collab>COB -Comitê Olímpico Brasileiro</collab>
+        </person-group>
+        <source>Desafio para o corpo</source>
+        <comment>Disponível em: <ext-link ext-link-type="uri" xlink:href="http://www.cob.org.br/esportes/esporte.asp?id=39">http://www.cob.org.br/esportes/esporte.asp?id=39</ext-link></comment>
+        <date-in-citation content-type="access-date">10 abr 2010</date-in-citation>
+    </element-citation>
+</ref>
+    <ref id="R05">
+        <label>5</label>
+        <mixed-citation>World Health Organization. Control of the leishmaniases. Geneva: WHO; 2010.(Technical Report Series; 949)</mixed-citation>
+        <element-citation publication-type="report">
+            <person-group person-group-type="author">
+                <collab>World Health Organization</collab>
+            </person-group>
+            <source>Control of the leishmaniases</source>
+            <publisher-loc>Geneva</publisher-loc>
+            <publisher-name>WHO</publisher-name>
+            <year>2010</year>
+            <comment>(Technical Report Series; 949)</comment>
+        </element-citation>
+    </ref>
+    <ref id="R06">
+        <label>6</label>
+        <mixed-citation>World Health Organization (WHO). Ultrasound in schistosomiasis. A pratical guide to the standardized use of ultrasonography for the assessment of schistosomiasis-related morbidity. Second International Workshop. 22 October, 1996, Niamey, Niger.</mixed-citation>
+        <element-citation publication-type="confproc">
+            <person-group person-group-type="author">
+                <collab>World Health Organization (WHO)</collab>
+            </person-group>
+            <source>Ultrasound in schistosomiasis. A pratical guide to the standardized use of ultrasonography for the assessment of schistosomiasis-related morbidity</source>
+            <comment>Second International Workshop</comment>
+            <day>22</day>
+            <month>10</month>
+            <publisher-loc>Niamey, Niger</publisher-loc>
+            <year>1996</year>
+        </element-citation>
+    </ref>
+    <ref id="R07">
+        <label>7</label>
+        <mixed-citation>Milani RM. Análise dos resultados imediatos da operação para revascularização do miocárdio sem pinçamento total da aorta [Dissertação de mestrado]. Curitiba: Universidade Federal do Paraná; 2000.</mixed-citation>
+        <element-citation publication-type="thesis">
+            <person-group person-group-type="author">
+                <name>
+                    <surname>Milani</surname>
+                    <given-names>RM</given-names>
+                </name>
+            </person-group>
+            <source>Análise dos resultados imediatos da operação para revascularização do miocárdio sem pinçamento total da aorta</source>
+            <comment>Dissertação de mestrado</comment>
+            <publisher-loc>Curitiba</publisher-loc>
+            <publisher-name>Universidade Federal do Paraná</publisher-name>
+            <year>2000</year>
+        </element-citation>
+    </ref>
+</ref-list>
 </back>
 </article>

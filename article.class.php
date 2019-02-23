@@ -137,6 +137,8 @@ class article extends FPDF {
 			}
 			$i++;
 		}
+
+
 	}
 }
 
@@ -144,7 +146,7 @@ $artigo = new article(file_get_contents("artigo2.xml"));
 echo "<pre>";
 var_dump(json_decode(json_encode($artigo)));
 echo "<h2> ARTICLE META</h2>";
-var_dump($artigo->xml->front->{'article-meta'}->{'trans-abstract'});
+var_dump($artigo->xml->back->{'ref-list'});
 echo "</pre>";
 ?>
 
