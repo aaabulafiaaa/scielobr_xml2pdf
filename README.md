@@ -5,6 +5,7 @@ A PHP implementation of Scielo's brazilian XML standard (http://docs.scielo.org/
 
 # Known Issues
 * Many indexed journals do not follow Scielo's standards and that's a deal breaker. I've been following the documentation linked above and we'll see where it leads me.
+* PDF output still doesn't work - I'm trying to get the specs right.
 
 # Ideas
 I'm thinking about using JSON for the internal handling of data, but i'm still not sure. The Scielo XML standard is full of redundancies in a very unorganized way: how come institutional affiliation and email addresses are outside the contributors' fields? Those data are bound together but are also literally scrambled in the XML files, which demands many workarounds circumvent. 
