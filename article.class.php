@@ -13,10 +13,10 @@ class article extends FPDF {
 	public $xml;
 
 	/* public __construct(string $xml, bool $loadAll), returns $this
-	Initializes simplexml object and loads (if $loadAll true) all this class properties. */
+	Initializes simplexml object and loads file $xml (if $loadAll true) all this class properties. */
 
 	public function __construct($xml, $loadAll = TRUE) {
-		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
+		$this->xml = simplexml_load_file($xml, NULL, LIBXML_NOCDATA);
 		if($loadAll){
 			$this->JournalData();
 			$this->AuthorData();
@@ -195,7 +195,7 @@ class article extends FPDF {
 	}
 }
 
-$artigo = new article(file_get_contents("artigo2.xml"));
+$artigo = new article("artigo2.xml");
 echo "<pre>";
 var_dump(json_decode(json_encode($artigo)));
 echo "<h2> ARTICLE META</h2>";
