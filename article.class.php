@@ -12,6 +12,9 @@ class article extends FPDF {
 	public $article = array();	
 	public $xml;
 
+	/* public __construct(string $xml, bool $loadAll), returns $this
+	Initializes simplexml object and loads (if $loadAll true) all this class properties. */
+
 	public function __construct($xml, $loadAll = TRUE) {
 		$this->xml = simplexml_load_string($xml, NULL, LIBXML_NOCDATA);
 		if($loadAll){
@@ -20,7 +23,16 @@ class article extends FPDF {
 			$this->IssueData();
 			$this->ArticleData();
 		}	
+		return $this;
 	}
+
+	/* public JournalData(), returns array $this->journal
+	Loads journal metadada into $this->journal
+		(string) id
+		(array) name (string full, string abbreviation)
+		(array) issn (int online, int print)
+		(string) publisher
+		(array) license (string license type, string license text) */
 
 	public function JournalData(){
 		$this->journal = array(
@@ -36,8 +48,19 @@ class article extends FPDF {
 				(string) $this->xml->front->{'article-meta'}->permissions->license[0]->{'license-p'}[0]
 				)
 		);
+		return $this->journal;
 	}
-
+	
+	/* public AuthorData(), returns $this->authors
+	Loads information about authors, institutions and affiliations and feed them in arrays
+		(string) institution
+		(string) country
+		(string) name1 (first name)
+		(string) name2 (surname)
+		(string) email
+		(string) correspondence (address)
+		(int) count (number of authors, for optimization purposes) */
+		
 	public function AuthorData(){
 		$i = 0;
 		foreach($this->xml->front->{'article-meta'}->{'contrib-group'}->contrib as $contrib){
@@ -58,7 +81,15 @@ class article extends FPDF {
 		$i++;
 		}
 		$this->authors["count"] = $i;
+		return $this->authors;
 	}
+
+	/*  public IssueData() returns $this->issue
+	Loads information about the issue the article was published in
+		(string) pub_season (Oct-Nov), doesn't handle languages
+		(int) pub_year
+		(int) volume
+		(int) issue */
 
 	public function IssueData(){
 		$this->issue = array(
@@ -69,6 +100,28 @@ class article extends FPDF {
 		);
 	}
 
+
+	/* public ArticleData(), returns $this->article
+	Loads article information multiple arrays
+		(array) metadata
+			(string) doi
+			(string) title
+			(array) pages ((int) first page, (int) last page)
+			(array) funding ((string) funding source, (string) award id)
+			(array) history ((int) received, (int) accepted) / UNIX Timestamp, use date() to handle
+			(array) keywords
+
+		(array) abstract (inside are all the abstracts and their sections)
+			(string) title
+			(string) text
+
+		(array) trans_abstract (same as last one), to add: language
+			(string) title
+			(string) text
+
+		(array) content (actual content, chapters, full text)
+			(string) title
+			(string) text */
 
 	public function ArticleData(){
 		$this->article["metadata"] = array(
@@ -138,7 +191,7 @@ class article extends FPDF {
 			$i++;
 		}
 
-
+		return $this->article;
 	}
 }
 
