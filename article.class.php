@@ -195,7 +195,6 @@ class article extends FPDF {
 	}
 }
 
-$artigo = new article(file_get_contents("artigo2.xml"));
 $artigo = new article("artigo2.xml");
 echo "<pre>";
 var_dump(json_decode(json_encode($artigo)));
