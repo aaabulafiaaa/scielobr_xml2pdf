@@ -195,11 +195,8 @@ class article extends FPDF {
 	}
 }
 
-<<<<<<< HEAD
 $artigo = new article(file_get_contents("artigo2.xml"));
-=======
 $artigo = new article("artigo2.xml");
->>>>>>> 03204c672651cc848706baed394b77e37dcbda05
 echo "<pre>";
 var_dump(json_decode(json_encode($artigo)));
 echo "<h2> ARTICLE META</h2>";
