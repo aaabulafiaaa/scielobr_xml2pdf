@@ -54,7 +54,7 @@ class article {
 
 }
 
-$artigo = new article(file_get_contents("artigo.xml"));
+$artigo = new article(file_get_contents("artigo2.xml"));
 echo "<pre>";
 var_dump($artigo);
 echo "</pre>";
