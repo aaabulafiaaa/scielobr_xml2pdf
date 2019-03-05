@@ -9,6 +9,7 @@ A PHP implementation of Scielo's brazilian XML standard (http://docs.scielo.org/
 
 # Ideas
 I'm thinking about using JSON for the internal handling of data, but i'm still not sure. The Scielo XML standard is full of redundancies in a very unorganized way: how come institutional affiliation and email addresses are outside the contributors' fields? Those data are bound together but are also literally scrambled in the XML files, which demands many workarounds circumvent. 
+* Implementing LaTex as an output; the software will generate the tex files and bibliography and output a full pdf; easier to format, more compatible. and it will go nice when this becomes an OJS plugin, since itw ould bring support.
 
 # Technical rant/other gibberish
 You can see there are two different XML files: one (artigo.xml) is a XML file i got from a random journal indexed by Scielo, and the other (artigo2.xml) was taken directly from Scielo publish schema's examples. It's not hard to see both files are different and still indexable either way, which grinds my gears.

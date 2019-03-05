@@ -1,11 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-	class latex{
-		public function __construct($array){
-			$latex = <<<EOT
 %% bare_conf.tex
 %% V1.3
 %% 2007/01/11
@@ -93,9 +85,9 @@ error_reporting(E_ALL);
 % usage:
 % \ifpdf
 %   % pdf code
-% \else
+% lse
 %   % dvi code
-% \fi
+% i
 % The latest version of ifpdf.sty can be obtained from:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
 % Also, note that IEEEtran.cls V1.7 and later provides a builtin
@@ -140,7 +132,7 @@ error_reporting(E_ALL);
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
+lse
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
@@ -150,7 +142,7 @@ error_reporting(E_ALL);
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.eps}
-\fi
+i
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation can
@@ -318,7 +310,7 @@ error_reporting(E_ALL);
 % the ability to do double column floats at the bottom of the page as well
 % as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
 % LaTeX2e). It also provides a command:
-%\fnbelowfloat
+%nbelowfloat
 % to enable the placement of footnotes below bottom floats (the standard
 % LaTeX2e kernel puts them above bottom floats). This is an invasive package
 % which rewrites many portions of the LaTeX2e float routines. It may not work
@@ -369,9 +361,9 @@ error_reporting(E_ALL);
 \begin{document}
 %
 % paper title
-% can use linebreaks \\ within to get better formatting as desired
+% can use linebreaks \ within to get better formatting as desired
 
-\title{Accelerating Curvature Estimate in 3D Seismic Data Using GPGPU}
+	itle{Accelerating Curvature Estimate in 3D Seismic Data Using GPGPU}
 
 
 
@@ -381,24 +373,24 @@ error_reporting(E_ALL);
 % use a multiple column layout for up to three different
 % affiliations
 \author{
-\IEEEauthorblockN{\hspace{15mm}Leonardo Martins, Marco Aur\'elio Gon\c{c}alves da Silva, Marcelo Arruda, Joner Duarte Jr,  Pedro M\'ario Silva,\hspace{10mm} \\Roberto Beauclair Seixas, Marcelo Gattass}
-\IEEEauthorblockA{Tecgraf/PUC-Rio\\
-Rio de Janeiro\\
+\IEEEauthorblockN{\hspace{15mm}Leonardo Martins, Marco Aur\'elio Gon\c{c}alves da Silva, Marcelo Arruda, Joner Duarte Jr,  Pedro M\'ario Silva,\hspace{10mm} \Roberto Beauclair Seixas, Marcelo Gattass}
+\IEEEauthorblockA{Tecgraf/PUC-Rio\
+Rio de Janeiro\
 Email: \{lmartins, msilva, marruda, jduartejr, pmario, rbs, mgattass\}@tecgraf.puc-rio.br}
 \and
 \IEEEauthorblockN{\hspace{32mm} Paulo Souza}
-\IEEEauthorblockA{\hspace{32mm} Petrobras\\
-\hspace{32mm} Rio de Janeiro\\
+\IEEEauthorblockA{\hspace{32mm} Petrobras\
+\hspace{32mm} Rio de Janeiro\
 \hspace{32mm} Email: prps@petrobras.com.br}
 \and
 \IEEEauthorblockN{Jairo Panetta}
-\IEEEauthorblockA{ITA/IEC\\
-S\~{a}o Jos\'e dos Campos\\
+\IEEEauthorblockA{ITA/IEC\
+S\~{a}o Jos\'e dos Campos\
 Email: panetta@ita.br}
 
 }
 
-% conference papers do not typically use \thanks and this command
+% conference papers do not typically use 	hanks and this command
 % is locked out in conference mode. If really needed, such as for
 % the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
 % after \documentclass
@@ -411,12 +403,12 @@ Email: panetta@ita.br}
 %James Kirk\IEEEauthorrefmark{3}, 
 %Montgomery Scott\IEEEauthorrefmark{3} and
 %Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\
 %Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Atlanta, Georgia 30332--0250\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\
 %Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\
 %Telephone: (800) 555--1212, Fax: (888) 555--1212}
 %\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
 
@@ -436,7 +428,7 @@ Email: panetta@ita.br}
 \begin{abstract}
 %\boldmath
 Seismic interpretation is a vital step in oil and gas industry. Choosing proper drilling locations is a major challenge to the interpreters, since an ultra-deep water oil well located below 2500 meters of water can cost dozens of millions of dollars. Volumetric curvature attributes are widely used to visualize folds, faults, among other key structures that define a possible reservoir. However, volumetric curvature estimate is very compute-intensive and can take several hours. The main goal of this paper is to present a GPGPU implementation that perform volumetric curvature estimate at interactive real-time, for a single volume slice.  We show an implementation that maximizes memory access, loading necessary data to GPU shared memory using a circular buffer. The most compute demanding kernel achieved 56\% of GPU peak performance and 1.676 instructions per clock out of theoretical maximum 2. Our results show an average speed-up of 12 times compared to CPU with OpenMP. In addition, the application fits really well on GPUs, due to the high number of registers available plus programmable cache (CUDA shared memory). The GPU performance gains enabled on-the-fly calculations during visualization at interactive real-time, instead of waiting time of hours for the whole volume.
-\end{abstract}
+nd{abstract}
 
 \IEEEpeerreviewmaketitle
 
@@ -458,7 +450,7 @@ The proposed GPGPU implementation reduces memory accesses by a circular buffer a
 
 The contribution of this paper comprises GPGPU and CPU optimization techniques in the task of interactive volumetric curvature estimate attributes in seismic data, using a mathematical approach that is faster than previous curvature estimate methods \cite{martinsthesis}. The method used in this work fits well on stencil computation domain, which allows the use of several parallel optimization techniques. In addition, our GPU implementation performs stencil data reuse with circular buffer, which reduces memory access around the stencil points, using shared memory. For visualization purposes, our implementation achieves interactive real-time for a single curvature volume section.
 
-This paper is organized as follows. Section \ref{sec:work} describes several previous works existing in literature, related to seismic attributes and high performance computing. Section \ref{sec:method} explains the curvature attribute method implemented in this work. Sections \ref{sec:cpu} and Section \ref{sec:gpu} describe technical details about CPU and GPU implementations, respectively. Results of our experiments are presented in Section \ref{sec:results}. Finally, Section \ref{sec:conclusions} presents some conclusion remarks.
+This paper is organized as follows. Section ef{sec:work} describes several previous works existing in literature, related to seismic attributes and high performance computing. Section ef{sec:method} explains the curvature attribute method implemented in this work. Sections ef{sec:cpu} and Section ef{sec:gpu} describe technical details about CPU and GPU implementations, respectively. Results of our experiments are presented in Section ef{sec:results}. Finally, Section ef{sec:conclusions} presents some conclusion remarks.
 
 \section{RELATED WORK} \label{sec:work}
 
@@ -468,7 +460,7 @@ An interactive seismic fault detector that use a nonlinear set of filters implem
 
 Volumetric curvature attributes in seismic data were proposed by \cite{dossary}. The authors demonstrate that volumetric curvature estimate can be obtained through dip volume derivatives. The use of fractional derivative operators allows a multi-spectral approach, highlighting features at different scales. In this approach, dip volumes are estimated through a local search for best correlation in semblance volume, and this is a very costly computational step. Therefore, a larger search range can further increase the processing time.
 
-%In \cite{panetta}, the authors describe the computational characteristics of the current Kirchhoff prestack seismic migration used in production by Petrobras. The application presented in the work has parallel scalability tested up to 8192 processors on the IBM Blue Gene without exhausting parallelism. Production load comprises thousands of jobs per year, consuming the installed park of a few thousand x86 CPU cores, with top production runs continuously using up to 1000 dedicated processors during 20 days. Also, job performance data are automatically  produced and stored by a built in mechanism, allowing single job performance analysis and multi job performance statistics. The authors demonstrate that the portability to quad-core x86 and Sony PlayStation 3 achieved very high price/performance and performance/watt gains over single core x86 machines. \textbf{COMENTARIO DO PANETTA: "Me parece que o trabalho citado não tem nada a ver com o tópico deste paper."}
+%In \cite{panetta}, the authors describe the computational characteristics of the current Kirchhoff prestack seismic migration used in production by Petrobras. The application presented in the work has parallel scalability tested up to 8192 processors on the IBM Blue Gene without exhausting parallelism. Production load comprises thousands of jobs per year, consuming the installed park of a few thousand x86 CPU cores, with top production runs continuously using up to 1000 dedicated processors during 20 days. Also, job performance data are automatically  produced and stored by a built in mechanism, allowing single job performance analysis and multi job performance statistics. The authors demonstrate that the portability to quad-core x86 and Sony PlayStation 3 achieved very high price/performance and performance/watt gains over single core x86 machines. 	extbf{COMENTARIO DO PANETTA: "Me parece que o trabalho citado não tem nada a ver com o tópico deste paper."}
 
 In \cite{nguyen}, the authors propose a 3.5D blocking algorithm (2.5D spatial blocking and an additional temporal blocking). The 2.5D spatial blocking blocks in two dimension and streams through the third dimension, which increases the blocking size and results in better utilization of the on-chip memory. The authors show that the resultant algorithm is suitable to both thread-level and data-level parallelism, and fits well with SIMD width and multiple cores. The 3.5D blocking algorithm is applied in two examples: a 7-point stencil for 3D grids and in a Lattice Boltzmann method (LBM). 
 
@@ -487,75 +479,81 @@ The method proposes to take into account the particular nature of this kind of d
   \includegraphics[width=5in]{method.png}
   \caption{Curvature estimate method}
   \label{fig:method}
-\end{figure*}
+nd{figure*}
 
 Therefore, it is proposed a pre-processing step, the computation of a horizon identifier attribute, which properly represents seismic horizons as level surfaces. The gradient of such attribute can provide a consistent estimate of the normal field. From this point, the normal field obtained can be used to compute volumetric curvature attributes. The authors proposed three horizon identifier attributes: instantaneous phase, vertical derivative and ridge/valley attribute. In this work we implemented only vertical derivative, which consists simply in vertical variation along seismic trace. For vertical derivative computation, we use a 3x3x11 gaussian derivative operator. The computation using others horizon identifier attributes will be addressed in future works.
 
-Generally, the method is based on three principal steps (Figure \ref{fig:method}). Firstly, seismic reflectors are properly described as level surfaces, through the computation of a horizon identifier attribute. Secondly, normal fields along X, Y and Z directions are estimated based on the gradient of this attribute. Finally, normal field partial derivatives are calculated in order to find desired volumetric curvature attributes, using a differential geometry approach.
+Generally, the method is based on three principal steps (Figure ef{fig:method}). Firstly, seismic reflectors are properly described as level surfaces, through the computation of a horizon identifier attribute. Secondly, normal fields along X, Y and Z directions are estimated based on the gradient of this attribute. Finally, normal field partial derivatives are calculated in order to find desired volumetric curvature attributes, using a differential geometry approach.
 
 In short, the differential geometry approach used by \cite{martins} proposes the use of curvature formulas for implicit surfaces in order to obtain volumetric curvature from horizon identifier attributes.
 
-Let $F(x,y,z) = 0$ be an implicit surface, $\nabla{F}$ the gradient vector and $H(F)$ the hessian matrix at a given point. In this case, we have:
+Let (x,y,z) = 0$ be an implicit surface, $
+abla{F}$ the gradient vector and (F)$ the hessian matrix at a given point. In this case, we have:
 
 \begin{equation} \label{eq:notation}
 \begin{array}{cc}
-\nabla{F} =  \left(\frac{\partial F}{\partial x} \mbox{  } \frac{\partial F}{\partial y} \mbox{  } \frac{\partial F}{\partial z} \right) = (F_x \mbox{ } F_y \mbox{ } F_z), \\\\
-H(F) = \left(\begin{array}{rrr} \frac{\partial^2 F}{\partial x^2} \mbox{  } &  \frac{\partial^2 F}{\partial x \partial y} \mbox{  } & \frac{\partial^2 F}{\partial x \partial z}\\
-				\frac{\partial^2 F}{\partial y \partial x} \mbox{  } &  \frac{\partial^2 F}{\partial y^2} \mbox{  } & \frac{\partial^2 F}{\partial y \partial z} \\
-				\frac{\partial^2 F}{\partial z \partial x} \mbox{  } &  \frac{\partial^2 F}{\partial z \partial y} \mbox{  } & \frac{\partial^2 F}{\partial z^2} \end{array} \right) = \\\\ \left(\begin{array}{rrr} F_{xx} \mbox{ } & F_{xy} \mbox{ } & F_{xz} \\
-					   F_{yx} \mbox{ } & F_{yy} \mbox{ } & F_{yz} \\
-					   F_{zx} \mbox{ } & F_{zy} \mbox{ } & F_{zz} \end{array} \right) = \nabla{(\nabla{F})}
-\end{array}
-\end{equation}
+
+abla{F} =  \left(rac{\partial F}{\partial x} \mbox{  } rac{\partial F}{\partial y} \mbox{  } rac{\partial F}{\partial z} ight) = (F_x \mbox{ } F_y \mbox{ } F_z), \\
+H(F) = \left(\begin{array}{rrr} rac{\partial^2 F}{\partial x^2} \mbox{  } &  rac{\partial^2 F}{\partial x \partial y} \mbox{  } & rac{\partial^2 F}{\partial x \partial z}\
+				rac{\partial^2 F}{\partial y \partial x} \mbox{  } &  rac{\partial^2 F}{\partial y^2} \mbox{  } & rac{\partial^2 F}{\partial y \partial z} \
+				rac{\partial^2 F}{\partial z \partial x} \mbox{  } &  rac{\partial^2 F}{\partial z \partial y} \mbox{  } & rac{\partial^2 F}{\partial z^2} nd{array} ight) = \\ \left(\begin{array}{rrr} F_{xx} \mbox{ } & F_{xy} \mbox{ } & F_{xz} \
+					   F_{yx} \mbox{ } & F_{yy} \mbox{ } & F_{yz} \
+					   F_{zx} \mbox{ } & F_{zy} \mbox{ } & F_{zz} nd{array} ight) = 
+abla{(
+abla{F})}
+nd{array}
+nd{equation}
 
 
-To properly represent normal orientation along implicit surfaces and curvature signal convention, it is necessary to change the gradient according to its $z$ component signal:
+To properly represent normal orientation along implicit surfaces and curvature signal convention, it is necessary to change the gradient according to its $ component signal:
 
 \begin{equation}
 N(F)=\left\{\begin{array}{rc}
-\nabla{F},&\mbox{se}\quad F_z\ge 0,\\
--\nabla{F},&\mbox{se}\quad F_z < 0,\\
-\end{array}\right.
-\end{equation}
 
-Thus, we can define an adapted hessian matrix $H^*(F)$ \cite{martinsthesis}, by the following expression:
+abla{F},&\mbox{se}\quad F_z\ge 0,\
+-
+abla{F},&\mbox{se}\quad F_z < 0,\
+nd{array}ight.
+nd{equation}
+
+Thus, we can define an adapted hessian matrix ^*(F)$ \cite{martinsthesis}, by the following expression:
 
 \begin{equation} \label{eq:novo}
 \begin{array}{cc}
-N(F) = (N_x \mbox{ } N_y \mbox{ } N_z),\\\\
-H^*(F) = \left(\begin{array}{rrr} \frac{\partial N_x}{\partial x} \mbox{  } &  \frac{\partial N_x}{\partial y} \mbox{  } & \frac{\partial N_x}{\partial z}\\
-				\frac{\partial N_y}{\partial x} \mbox{  } &  \frac{\partial N_y}{\partial y} \mbox{  } & \frac{\partial N_y}{\partial z}\\
-				\frac{\partial N_z}{\partial x} \mbox{  } &  \frac{\partial N_z}{\partial y} \mbox{  } & \frac{\partial N_z}{\partial z}\\ \end{array} \right)
-\end{array}
-\end{equation}
+N(F) = (N_x \mbox{ } N_y \mbox{ } N_z),\\
+H^*(F) = \left(\begin{array}{rrr} rac{\partial N_x}{\partial x} \mbox{  } &  rac{\partial N_x}{\partial y} \mbox{  } & rac{\partial N_x}{\partial z}\
+				rac{\partial N_y}{\partial x} \mbox{  } &  rac{\partial N_y}{\partial y} \mbox{  } & rac{\partial N_y}{\partial z}\
+				rac{\partial N_z}{\partial x} \mbox{  } &  rac{\partial N_z}{\partial y} \mbox{  } & rac{\partial N_z}{\partial z}\ nd{array} ight)
+nd{array}
+nd{equation}
 
 
-At this point, gaussian curvature $k_G$ can be obtained using the following expression
+At this point, gaussian curvature $ can be obtained using the following expression
 
 \begin{equation}\label{eq:kG}
-k_G =  \frac{ \left|\begin{array}{rr} H^*(F) & N(F)^T \\ N(F) & 0 \end{array} \right|} {|N(F)|^4}
-\\
-\end{equation}
+k_G =  rac{ \left|\begin{array}{rr} H^*(F) & N(F)^T \ N(F) & 0 nd{array} ight|} {|N(F)|^4}
+\
+nd{equation}
 
-and mean curvature $k_M$ is given by:
+and mean curvature $ is given by:
 
 \begin{equation}\label{eq:kM}
-k_M =  \frac{ N(F) * H^*(F) * N(F)^T - |N(F)|^2Trace(H^*)} {2|N(F)|^3}
-\\
-\end{equation}
+k_M =  rac{ N(F) * H^*(F) * N(F)^T - |N(F)|^2Trace(H^*)} {2|N(F)|^3}
+\
+nd{equation}
 
-Once these two measures are defined for a given point, we can obtain maximum and minimum curvatures,  $k_1$ and $k_2$, by the classic equation
+Once these two measures are defined for a given point, we can obtain maximum and minimum curvatures,  $ and $, by the classic equation
 
 \begin{equation}
 k_1,k_2 = k_M \pm \sqrt{k^2_M - k_G}
-\end{equation}
+nd{equation}
 
 
 In order to obtain gradient vector and partial derivatives, gaussian derivative operators provide a smoothed estimate. Also, different derivative operator sizes increase or decrease curvature wavelength imaging. Long spectral wavelength curvature may be of great value in visualizing subtle features such as folds, flexures, collapse features, among others \cite{dossary}. However, sometimes input data is subject to high levels of noise, or interpreters just want to look at main features in data, so in these cases short spectral wavelength curvature is more indicated.
 
 In practice, the main computational task is performed through convolution of gaussian derivative filters. Therefore, this method has the advantage that a filter based on convolution can be straightly formulated in a parallel approach.
 
-Curvature attributes estimate is the final and most compute-intensive step. Indeed, it involves, for each voxel, the computation of a 4x4 determinant (Equation \ref{eq:kG}), composed by matrix $H^*(F)$, normal vector $N(F)$ and the last element, zero. Also, the 9 partial derivatives of  $H^*(F)$ are obtained through convolution of normal field volumes with gaussian derivative filters.
+Curvature attributes estimate is the final and most compute-intensive step. Indeed, it involves, for each voxel, the computation of a 4x4 determinant (Equation ef{eq:kG}), composed by matrix ^*(F)$, normal vector (F)$ and the last element, zero. Also, the 9 partial derivatives of  ^*(F)$ are obtained through convolution of normal field volumes with gaussian derivative filters.
 
 \section{CPU Implementation} \label{sec:cpu}
 
@@ -567,7 +565,7 @@ OpenMP programming is straightforward in this application. The outer loop was pa
 
 Since the method have three steps based on convolution operators, we can rely on stencil computation  \cite{dursun} to maximize cache reuse. Stencil computation is often used in fluid simulation problems and in numerical analysis to solve partial differential equations. One of the biggest challenge of stencil computation is the bandwidth-to-compute requirement that is often very high, due to the large amount of data needed for few calculation \cite{nguyen}.
 
-Although most implementations of stencil computation access neighbors  in a cross pattern, our implementation uses a 3D grid shape to obtain better continuity of seismic features on the final result (Figure \ref{fig:kernel}).
+Although most implementations of stencil computation access neighbors  in a cross pattern, our implementation uses a 3D grid shape to obtain better continuity of seismic features on the final result (Figure ef{fig:kernel}).
 
 \begin{figure}[h!]
   \centering
@@ -577,7 +575,7 @@ Although most implementations of stencil computation access neighbors  in a cros
   the blue sphere represents the neighbors voxels that will be used in the calculation.
   Spheres with darker shades of blue are closer to the kernel center. }
   \label{fig:kernel}
-\end{figure}
+nd{figure}
 
 Both Intel C compiler and gcc vectorized some loops. However, they did not vectorize the hot spot on the third step, and we think a manual outer loop vectorization with intrinsics will be too much work. The other limiting factor for vectorization is the fact that each point of stencil requires 16 scalar properties to find a 4x4 matrix determinant. The AVX instruction is known to have only 16 vector registers that leads to register spilling since we need to store 16 properties. AVX-512 \cite{avx} with 32 vector registers can reduce the register pressure.
 
@@ -598,7 +596,7 @@ Each of the three steps of the curvature method was implemented in a different C
 
 In order to maximize performance we schedule blocks of 256 threads and each thread unrolled the inner most loop to dispatch a lot of independent instructions. By definition all CUDA kernels are vectorized, the programmer does not need to code using vector intrinsics but must be aware that the code is going to be vectorized under the hood. In addition, we pre-compute the stencil computation operator and store it into constant memory.
 
-The memory access optimization is given by changing the order of the access. As we sweep through the volume we can vary the index of the voxels for the three dimensions. However, when we walk in the x dimension, which is relative to the \emph{inline} axis, the physical shift in the memory address yield to an overhead due to high latency of this access which stalls the pipeline process. By changing the direction we walk through the volume, we can access addresses more contiguously and achieve better performance by launching the threads in the plane \emph{crossline} x \emph{time} instead of the plane \emph{inline} x \emph{crossline}. This optimization benefits directly the three steps of the method since the access to neighbor voxels is faster.
+The memory access optimization is given by changing the order of the access. As we sweep through the volume we can vary the index of the voxels for the three dimensions. However, when we walk in the x dimension, which is relative to the mph{inline} axis, the physical shift in the memory address yield to an overhead due to high latency of this access which stalls the pipeline process. By changing the direction we walk through the volume, we can access addresses more contiguously and achieve better performance by launching the threads in the plane mph{crossline} x mph{time} instead of the plane mph{inline} x mph{crossline}. This optimization benefits directly the three steps of the method since the access to neighbor voxels is faster.
 
 When we compute a set of lines, two extra lines are load to shared memory, in this way when the next set of lines will be computed, these lines are directly accessible in shared memory, reducing the memory address translation misses.
 
@@ -623,39 +621,39 @@ neighbor slices (2 for the first step, 4 for the second step e 4 more for the th
 In this case, the sub volume size used to compute only one slice will be much smaller,
 thus faster to process.
 
-On the GPU, the maximum performance is only achieved if you keep everything in registers, registers are the fasted storage on GPUs with a peak of bandwidth of 10TB/s (1331 flops $\rightarrow$ 16 bytes per multiply and add $\rightarrow$ 3 loads 1 store)  on Tesla M2090 \cite{nvidia}.
+On the GPU, the maximum performance is only achieved if you keep everything in registers, registers are the fasted storage on GPUs with a peak of bandwidth of 10TB/s (1331 flops $ightarrow$ 16 bytes per multiply and add $ightarrow$ 3 loads 1 store)  on Tesla M2090 \cite{nvidia}.
 
 One of the great features of the GPUs is the high number of registers, in theory we can keep all 15 properties in registers, we checked the number of registers used using nvcc. The nvidia compiler
 shows the number of registers used by each kernel and if you are running out of registers going to GDDR memory. In our case, the compiler generated the kernel using 60 registers with no spills to
 slower memory.
 
-We maximize data reuse using a 3D circular buffer around the stencil points using shared memory for the curvature estimate step. To process a single voxel we need, for example, a 5x5x5 region. Thus we load, before the loop, four planes and for each new plane the $iz + 2$ overwrites the $iz - 2$ old plane. Figure \ref{fig:circular_buffer} shows how circular buffers works. The implementation overview can be seen on Figure \ref{fig:overview}.
+We maximize data reuse using a 3D circular buffer around the stencil points using shared memory for the curvature estimate step. To process a single voxel we need, for example, a 5x5x5 region. Thus we load, before the loop, four planes and for each new plane the  + 2$ overwrites the  - 2$ old plane. Figure ef{fig:circular_buffer} shows how circular buffers works. The implementation overview can be seen on Figure ef{fig:overview}.
 
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{circular_buffer_layers_smaller.pdf}
-  \caption{Circular buffer on shared memory. $z$ is the slowest dimension. The next iteration will overwrite the red plan }
+  \caption{Circular buffer on shared memory. $ is the slowest dimension. The next iteration will overwrite the red plan }
   \label{fig:circular_buffer}
-\end{figure}
+nd{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{overview.pdf}
   \caption{ GPU Implementation Overview. The small blocks inside the volume in the three steps represents the stencil computer (SC) operators. The yellow block in the curvature step represents the circular buffer. }
   \label{fig:overview}
-\end{figure}
+nd{figure}
 
 
 \section{RESULTS} \label{sec:results}
 
 The algorithm was implemented in a beta version of v3o2, an application for Seismic Visualization and Interpretation used in Petrobras. We executed the algorithm using different sizes of the derivative operator filter for the sequential approach running on the CPU and for the parallel approach both on CPU and GPU. We tested the performance on the i7 3970x CPU (6 cores) with 24GB of RAM and a Geforce GTX 580 GPU (512 CUDA cores). GPU times include device initialization, memory allocation/deallocation and transfers.
 
-The resultant curvature for a 32 bits volume with 244MB (291 inline, 476 crossline and 462 time slices) is presented in Figure \ref{fig:horizonResults}. The computational cost is evaluated in Table \ref{table:volumeresults}. For the 5x5x5 operator size, which is a value commonly used by interpreters, the curvature volume is obtained in nearly 0.5 second by GPU implementation with a speed-up of 11.2 times in comparison to CPU implementation with OpenMP (12 threads). For the largest derivative operator size (17x17x17) the GPU achieves a speed-up of 114.2 times in relation to CPU sequential execution time and a speed-up of 8.63 times in comparison to CPU with OpenMP (12 threads).
+The resultant curvature for a 32 bits volume with 244MB (291 inline, 476 crossline and 462 time slices) is presented in Figure ef{fig:horizonResults}. The computational cost is evaluated in Table ef{table:volumeresults}. For the 5x5x5 operator size, which is a value commonly used by interpreters, the curvature volume is obtained in nearly 0.5 second by GPU implementation with a speed-up of 11.2 times in comparison to CPU implementation with OpenMP (12 threads). For the largest derivative operator size (17x17x17) the GPU achieves a speed-up of 114.2 times in relation to CPU sequential execution time and a speed-up of 8.63 times in comparison to CPU with OpenMP (12 threads).
 
 Best GPU performance was achieved using 3D shared buffer implementation for 3x3x3 and 5x5x5 operators. However, due to memory limitation, large operators size were performed using a 2D shared buffer implementation.
 
-Table \ref{table:gpucomparison} shows the gains using 2D and 3D shared buffers. As already mentioned the use of 3D shared buffers is limited by the amount of shared memory available at GPU, which restricts the use of larger operator sizes. For 5x5x5 operator size, we can perceive a small speed-up of $1.09$ with 3D shared buffer implementation, in comparison with 2D shared buffer.
+Table ef{table:gpucomparison} shows the gains using 2D and 3D shared buffers. As already mentioned the use of 3D shared buffers is limited by the amount of shared memory available at GPU, which restricts the use of larger operator sizes. For 5x5x5 operator size, we can perceive a small speed-up of $1.09$ with 3D shared buffer implementation, in comparison with 2D shared buffer.
 
 % Booktabs require to add \usepackage{booktabs} to your document preamble
 \begin{table}[h]
@@ -663,24 +661,24 @@ Table \ref{table:gpucomparison} shows the gains using 2D and 3D shared buffers. 
 \caption{Time comparison processing the curvature method on CPU sequentially, CPU with OpenMP and GPU.}
 \label{table:volumeresults}
 \begin{tabular}{@{}cccc@{}}
-\toprule
-Operator size & \begin{tabular}[c]{@{}c@{}}CPU sequential\\  time (s)\end{tabular} & \begin{tabular}[c]{@{}c@{}}CPU with OpenMP\\ time (s)\end{tabular} & \begin{tabular}[c]{@{}c@{}}GPU\\ time (s)\end{tabular} \\ \midrule
-3 x 3 x 3     & 26.68                 & 3.91                         & 0.31       \\ \midrule
-5 x 5 x 5     & 55.84                 & 6.75                         & 0.55       \\ \midrule
-7 x 7 x 7     & 125.25                & 15.39                        & 1.42       \\ \midrule
-11 x 11 x 11  & 446.23                & 53.49                        & 3.79       \\ \midrule
-17 x 17 x 17  & 1586.15               & 119.84                       & 13.88      \\ \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
+	oprule
+Operator size & \begin{tabular}[c]{@{}c@{}}CPU sequential\  time (s)nd{tabular} & \begin{tabular}[c]{@{}c@{}}CPU with OpenMP\ time (s)nd{tabular} & \begin{tabular}[c]{@{}c@{}}GPU\ time (s)nd{tabular} \ \midrule
+3 x 3 x 3     & 26.68                 & 3.91                         & 0.31       \ \midrule
+5 x 5 x 5     & 55.84                 & 6.75                         & 0.55       \ \midrule
+7 x 7 x 7     & 125.25                & 15.39                        & 1.42       \ \midrule
+11 x 11 x 11  & 446.23                & 53.49                        & 3.79       \ \midrule
+17 x 17 x 17  & 1586.15               & 119.84                       & 13.88      \ \bottomrule
+nd{tabular}
+nd{center}
+nd{table}
 
 
 \begin{figure*}[ht!]
   \centering
   \includegraphics[width=5in]{results_map_3.png}
-  \caption{Volumetric curvature attribute $k_1$ mapped along an tracked horizon, using 5x5x5 (a), 7x7x7 (b), 11x11x11 (c) and 17x17x17 (d) derivative operator sizes. As the operator size increases, subtle details trend to disappear, and only main structural features remains on final result.}
+  \caption{Volumetric curvature attribute $ mapped along an tracked horizon, using 5x5x5 (a), 7x7x7 (b), 11x11x11 (c) and 17x17x17 (d) derivative operator sizes. As the operator size increases, subtle details trend to disappear, and only main structural features remains on final result.}
   \label{fig:horizonResults}
-\end{figure*}
+nd{figure*}
 
 % Booktabs require to add \usepackage{booktabs} to your document preamble
 \begin{table}[h!]
@@ -688,16 +686,16 @@ Operator size & \begin{tabular}[c]{@{}c@{}}CPU sequential\\  time (s)\end{tabula
 \caption{Time comparison on GPU times and the optimizations implemented.}
 \label{table:gpucomparison}
 \begin{tabular}{@{}cccc@{}}
-\toprule
-Operator size & \begin{tabular}[c]{@{}c@{}}GPU without \\ shared buffer \\  time (s)\end{tabular} & \begin{tabular}[c]{@{}c@{}}GPU with \\ 2D shared buffer\\ time (s)\end{tabular} & \begin{tabular}[c]{@{}c@{}}GPU with \\ circular 3D \\ shared buffer\\ time (s)\end{tabular} \\ \midrule
-3 x 3 x 3     & 0.32                     & 0.32                    & 0.31          \\ \midrule
-5 x 5 x 5     & 0.66                     & 0.60                    & 0.55          \\ \midrule
-7 x 7 x 7     & 1.54                     & 1.42                    & -          \\ \midrule
-11 x 11 x 11  & 4.65                     & 3.79                    & -          \\ \midrule
-17 x 17 x 17  & 15.57                    & 13.88                   & -         \\ \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
+	oprule
+Operator size & \begin{tabular}[c]{@{}c@{}}GPU without \ shared buffer \  time (s)nd{tabular} & \begin{tabular}[c]{@{}c@{}}GPU with \ 2D shared buffer\ time (s)nd{tabular} & \begin{tabular}[c]{@{}c@{}}GPU with \ circular 3D \ shared buffer\ time (s)nd{tabular} \ \midrule
+3 x 3 x 3     & 0.32                     & 0.32                    & 0.31          \ \midrule
+5 x 5 x 5     & 0.66                     & 0.60                    & 0.55          \ \midrule
+7 x 7 x 7     & 1.54                     & 1.42                    & -          \ \midrule
+11 x 11 x 11  & 4.65                     & 3.79                    & -          \ \midrule
+17 x 17 x 17  & 15.57                    & 13.88                   & -         \ \bottomrule
+nd{tabular}
+nd{center}
+nd{table}
 
 % Booktabs require to add \usepackage{booktabs} to your document preamble
 \begin{table}[h!]
@@ -705,20 +703,20 @@ Operator size & \begin{tabular}[c]{@{}c@{}}GPU without \\ shared buffer \\  time
 \caption{Time comparison processing inline slices on CPU and GPU.}
 \label{table:sliceresults}
 \begin{tabular}{@{}ccccc@{}}
-\toprule
-Operator size & \begin{tabular}[c]{@{}c@{}}Number \\of slice\\  requireds\end{tabular} & \begin{tabular}[c]{@{}c@{}}CPU \\ with OpenMP\\ time (ms)\end{tabular} & \begin{tabular}[c]{@{}c@{}}GPU \\  optimized\\ time (ms)\end{tabular} & \begin{tabular}[c]{@{}c@{}} Memory transfer\\ host  $\leftrightarrow$ device \\ time (ms)\end{tabular}\\ \midrule
-3 x 3 x 3     &          7           &            570          &        10     &     6.5  \\ \midrule
-5 x 5 x 5     &          11          &            790          &        18     &     10  \\ \midrule
-7 x 7 x 7     &          15          &            920          &        31     &     14  \\ \midrule
-11 x 11 x 11  &          23          &           1220          &        89     &     21  \\ \midrule
-17 x 17 x 17  &          35          &  	     2130		   &        570    &     32  \\ \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
+	oprule
+Operator size & \begin{tabular}[c]{@{}c@{}}Number \of slice\  requiredsnd{tabular} & \begin{tabular}[c]{@{}c@{}}CPU \ with OpenMP\ time (ms)nd{tabular} & \begin{tabular}[c]{@{}c@{}}GPU \  optimized\ time (ms)nd{tabular} & \begin{tabular}[c]{@{}c@{}} Memory transfer\ host  $\leftrightarrow$ device \ time (ms)nd{tabular}\ \midrule
+3 x 3 x 3     &          7           &            570          &        10     &     6.5  \ \midrule
+5 x 5 x 5     &          11          &            790          &        18     &     10  \ \midrule
+7 x 7 x 7     &          15          &            920          &        31     &     14  \ \midrule
+11 x 11 x 11  &          23          &           1220          &        89     &     21  \ \midrule
+17 x 17 x 17  &          35          &  	     2130		   &        570    &     32  \ \bottomrule
+nd{tabular}
+nd{center}
+nd{table}
 
 Since the algorithm uses at least 4x the volume memory to calculate the curvature attribute, the maximum volume size to use on each run is 750MB (considering GTX 580 has a global memory of 3GB).
 
-To evaluate the slice approach, we use a 32 bits volume with 1.1 GB (581 inline, 951 crossline and 462 time slices). The performance is evaluated in Table \ref{table:sliceresults}. The measures indicates that the computation of an inline slice requires less memory and can be performed in real-time, allowing interactive manipulation using operator sizes from 3x3x3 to 7x7x7. Although we used pinned memory to hold the volume data, 45\% to 65\% of the time for these operators are spent with memory transfers between host and device.
+To evaluate the slice approach, we use a 32 bits volume with 1.1 GB (581 inline, 951 crossline and 462 time slices). The performance is evaluated in Table ef{table:sliceresults}. The measures indicates that the computation of an inline slice requires less memory and can be performed in real-time, allowing interactive manipulation using operator sizes from 3x3x3 to 7x7x7. Although we used pinned memory to hold the volume data, 45\% to 65\% of the time for these operators are spent with memory transfers between host and device.
 
 The method implemented was profiled with NVIDA profiler and the most compute demanding kernel achieved 56\% of peak performance in GFlops and 1.676 instructions per cycle out of theoretical maximum 2. 
 
@@ -748,15 +746,4 @@ The authors would like to thank Petrobras for the research opportunity and for t
 \bibliography{example}
 
 % that's all folks
-\end{document}
-EOT;
-
-file_put_contents("latex/temp/main.tex", $latex); file_put_contents("latex/temp/IEEEtran.cls", file_get_contents("latex/IEEEtran.cls"));
-
-exec("cd latex; mkdir askddsadj; /usr/bin/xelatex -interaction nonstopmode main.tex; ls", $output); echo "<pre>"; var_dump($output); echo "</pre>";
-}
-
-}
-
-$latex = new latex();
-
+nd{document}
