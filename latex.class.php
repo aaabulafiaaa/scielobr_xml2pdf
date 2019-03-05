@@ -1,4 +1,7 @@
-
+<?php
+	class latex{
+		public function __construct($array){
+			$latex = <<<EOT
 %% bare_conf.tex
 %% V1.3
 %% 2007/01/11
@@ -742,5 +745,14 @@ The authors would like to thank Petrobras for the research opportunity and for t
 
 % that's all folks
 \end{document}
+EOT;
 
+file_put_contents("latex/temp/main.tex", $latex); file_put_contents("latex/temp/IEEEtran.cls", file_get_contents("latex/IEEEtran.cls"));
+
+var_dump(exec("cd /home/user/pleroma/test/scielo/latex/temp; xelatex main.tex"));
+}
+
+}
+
+$latex = new latex();
 
